@@ -15,6 +15,10 @@ function scrollToPrev(el) {
   });
 }
 
+// NAVBAR
+let nav = document.querySelector('.navbar')
+let navItem = document.querySelectorAll('.navbar li')
+
 // HAMBURGER
 let burgerContainer = document.querySelector('.burger');
 let bar1 = document.querySelector('.bar');
@@ -24,15 +28,28 @@ burgerContainer.addEventListener('click', function () {
   if(bar1.classList.contains('ACTIVE')) {
     bar1.classList.add('st2');
     setTimeout(function () {
-      bar1.classList.add('st3')
+      bar1.classList.add('st3');
+      nav.classList.add('showNav');
     }, 900);
   } else {
     bar1.classList.remove('st3');
     setTimeout(function () {
       bar1.classList.remove('st2');
+      nav.classList.remove('showNav');
     }, 700);
   }
-})
+});
+
+for (var i = 0; i < navItem.length; i++) {
+  navItem[i].addEventListener('click', function () {
+    bar1.classList.remove('ACTIVE')
+    bar1.classList.remove('st3');
+    setTimeout(function () {
+      bar1.classList.remove('st2');
+      nav.classList.remove('showNav');
+    }, 700);
+  })
+}
 
 burgerContainer.addEventListener('mouseover', function () {
   bar1.classList.add('st1');

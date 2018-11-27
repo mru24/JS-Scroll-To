@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 20px;
+}
+
 body, html {
   height: 100vh;
 }
@@ -53,9 +61,9 @@ body nav .burger {
   right: 20px;
   width: 70px;
   height: 70px;
-  border: 1px solid #bbb;
   border-radius: 6px;
   background: white;
+  cursor: pointer;
 }
 
 body nav .burger .bar {
@@ -66,7 +74,7 @@ body nav .burger .bar {
   position: absolute;
   top: 50%;
   left: 5px;
-  transition: .3s;
+  transition: .5s;
 }
 
 body nav .burger .bar::after, body nav .burger .bar::before {
@@ -76,16 +84,15 @@ body nav .burger .bar::after, body nav .burger .bar::before {
   content: '';
   background: #bbb;
   transform-origin: center;
+  transition: .5s;
 }
 
 body nav .burger .bar::after {
   top: 15px;
-  transition: .3s;
 }
 
 body nav .burger .bar::before {
   top: -15px;
-  transition: .3s;
 }
 
 body nav .burger .st1::after {
@@ -107,7 +114,7 @@ body nav .burger .st2::after {
 
 body nav .burger .st2::before {
   top: 0;
-  transform: rotate(-15deg);
+  transform: rotate(-195deg);
 }
 
 body nav .burger .st3 {
@@ -120,4 +127,54 @@ body nav .burger .st3::after {
 
 body nav .burger .st3::before {
   transform: rotate(-45deg);
+}
+
+body nav .navbar {
+  display: block;
+  background: #bbb;
+  width: 50%;
+  margin: auto;
+  transform: translateY(-100%);
+  transition: .5s;
+  opacity: 0;
+}
+
+body nav .navbar li {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+body nav .showNav {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+body .container {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+}
+
+@media screen and (max-width: 990px) {
+  body .container {
+    width: 92%;
+    display: block;
+  }
+}
+
+body .container .first, body .container .second, body .container .third {
+  margin: 20px;
+}
+
+body .container .first {
+  flex: 1;
+}
+
+body .container .second {
+  flex: 2;
+}
+
+body .container .third {
+  flex: 1;
 }
